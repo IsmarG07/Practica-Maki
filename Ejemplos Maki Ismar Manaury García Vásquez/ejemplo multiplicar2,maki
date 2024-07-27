@@ -1,0 +1,18 @@
+; =============
+; RES = !NUM * 3
+; =============
+
+; segmento de datos
+BEGIN-DATA
+        NUM=5        ; número a multiplicar por 3
+        RES=?        ; donde se guarda el resultado
+END-DATA
+
+; segmento de código
+BEGIN-CODE
+        MOV [NUM], AC
+BUCLE:  MOV 3,RT
+        MUL
+        MOV AC,[RES]     
+        TERM          
+END-CODE
